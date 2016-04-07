@@ -6,7 +6,7 @@ class ClassroomsController < ApplicationController
   def create
     classroom = Classroom.new(classroom_data)
     if classroom.save
-      render json: { success: true }
+      render json: { success: true, content: render_to_string(partial: 'classrooms/classroom', locals: { classroom: classroom, deletable: true }) }
     else
       render json: { success: false, errors: classroom.errors.full_messages }
     end

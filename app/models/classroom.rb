@@ -5,7 +5,7 @@ class Classroom < ActiveRecord::Base
 
   # validations
   validates :student, presence: true
-  validates :course, presence: true
+  validates :course, presence: true, uniqueness: { scope: :student }
 
   # hooks
   before_create :generate_entry_at

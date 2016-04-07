@@ -54,7 +54,9 @@ $(document).ready(function () {
 
     $.post(action, data, function(response){
         if (response.success) {
-            location.reload();
+            $('#classroomTable tr:first').after(response.content);
+            $('#studentsSearch').val('');
+            $('#coursesSearch').val('');
         } else {
             alert(response.errors.join("\n"));
         }
