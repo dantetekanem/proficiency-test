@@ -18,6 +18,7 @@ gem 'rails-assets-bootstrap'
 gem 'rails-assets-normalize-scss', '~> 3.0.1'
 gem 'haml', '~> 4.0.4'
 gem 'pg', '~> 0.17.1'
+gem 'rails_12factor', group: [:production, :staging]
 gem 'figaro', '1.0.0'
 
 group :doc do
