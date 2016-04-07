@@ -13,8 +13,6 @@ class Student < ActiveRecord::Base
   # hooks
  	before_validation :generate_register_number, on: :create
 
-  accepts_nested_attributes_for :classrooms
-
   # scopes
   scope :latest, -> { order(id: :desc) }
   scope :by_name, -> { order(name: :asc) }
