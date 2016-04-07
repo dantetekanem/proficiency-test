@@ -30,9 +30,9 @@ class StudentsController < ApplicationController
   def update
     student = Student.find(params[:id])
     if student.update(student_params)
-      redirect_to edit_student_path(params[:id]), notice: 'Student updated successfully.'
+      redirect_to edit_student_path(student), notice: 'Student updated successfully.'
     else
-      redirect_to edit_student_path(params[:id]), alert: student.errors.full_messages
+      redirect_to edit_student_path(student), alert: student.errors.full_messages
     end
   end
 

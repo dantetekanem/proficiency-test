@@ -30,9 +30,9 @@ class CoursesController < ApplicationController
   def update
     course = Course.find(params[:id])
     if course.update(course_params)
-      redirect_to edit_course_path(params[:id]), notice: 'Course updated successfully.'
+      redirect_to edit_course_path(course), notice: 'Course updated successfully.'
     else
-      redirect_to edit_course_path(params[:id]), alert: course.errors.full_messages
+      redirect_to edit_course_path(course), alert: course.errors.full_messages
     end
   end
 
