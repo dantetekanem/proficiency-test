@@ -1,0 +1,11 @@
+%tr
+  %td= student.name
+  %td= student.register_number
+  %td= student.classrooms.size
+  - if defined?(status)
+    %td= student.status
+  %td
+    = link_to 'Edit', edit_student_path(student)
+    - if defined?(deletable)
+      = ' | '
+      = link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,0 +1,8 @@
+.row
+  .col-md-12
+    %h1= "Editing course ##{ @course.id }"
+    = link_to 'Back to courses', courses_path, class: 'badge'
+    %hr
+    = form_for @course do |f|
+      = render partial: 'form', locals: { f: f }
+      = f.button 'Save', type: 'submit', class: 'btn btn-primary'

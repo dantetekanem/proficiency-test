@@ -1,0 +1,20 @@
+.row
+  .col-md-12
+    %h1 Courses
+    = link_to 'Create new course', new_course_path, class: 'badge'
+    %hr
+  .col-md-12
+    %table.table.table-striped
+      %tr
+        %td
+          %b Name
+        %td
+          %b Description
+        %td
+          %b Classrooms
+        %td
+          %b Status
+        %td
+      = render partial: 'courses/course', collection: @courses, locals: { status: true, deletable: true }
+    %hr
+    = paginate @courses

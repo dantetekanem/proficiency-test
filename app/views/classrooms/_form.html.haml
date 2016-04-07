@@ -1,0 +1,12 @@
+%form.form-inline#classroom-form{action: classrooms_path, method: :post}
+  .form-group
+    %label.sr-only Student
+    .input-group
+      .input-group-addon Student
+      %input.form-control#studentsSearch{type: 'text', placeholder: 'Type student name...', required: true}
+  .form-group
+    %label.sr-only Course
+    .input-group
+      .input-group-addon Course
+      %input.form-control#coursesSearch{type: 'text', placeholder: 'Type course name...', required: true}
+  %button.btn.btn-primary{type: 'submit'} Save Classroom

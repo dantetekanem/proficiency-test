@@ -1,0 +1,19 @@
+.row
+  .col-md-12
+    %h1 Classrooms
+    %p To add a new classroom, type the student and the course below.
+    = render partial: 'form'
+    %hr
+  .col-md-12
+    %table.table.table-striped
+      %tr
+        %td
+          %b Student
+        %td
+          %b Course
+        %td
+          %b Entry At
+        %td
+      = render partial: 'classrooms/classroom', collection: @classrooms, locals: { deletable: true }
+    %hr
+    = paginate @classrooms

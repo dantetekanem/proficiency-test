@@ -1,0 +1,8 @@
+%tr
+  %td= link_to classroom.student.name, edit_student_path(classroom.student)
+  %td= link_to classroom.course.name, edit_course_path(classroom.course)
+  %td= classroom.entry_at
+  %td
+    - if defined?(deletable)
+      = link_to 'Delete', classroom_path(classroom), method: :delete, data: { confirm: 'Are you sure?' }
+

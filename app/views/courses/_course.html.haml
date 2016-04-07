@@ -1,0 +1,12 @@
+%tr
+  %td= course.name
+  %td= course.description
+  %td= course.classrooms.size
+  - if defined?(status)
+    %td= course.status
+  %td
+    = link_to 'Edit', edit_course_path(course)
+    - if defined?(deletable)
+      = ' | '
+      = link_to 'Delete', course_path(course), method: :delete, data: { confirm: 'Are you sure?' }
+

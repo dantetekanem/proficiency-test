@@ -1,0 +1,55 @@
+.row
+  .col-md-12
+    %h1 Proficiency Test by Leonardo Pereira
+    %p Below are some basic infos from the database
+    %hr
+  .col-md-12
+    = link_to students_path do
+      = 'Active students'
+      %span.badge= @students.size
+    %hr
+      %h4 Latest active students
+      %table.table.table-striped
+        %tr
+          %td
+            %b Name
+          %td
+            %b Register Number
+          %td
+            %b Classrooms
+          %td
+        = render partial: 'students/student', collection: @students.latest.limit(5)
+    %hr
+  .col-md-12
+    = link_to courses_path do
+      = 'Active courses'
+      %span.badge= @courses.size
+    %hr
+      %h4 Latest active courses
+      %table.table.table-striped
+        %tr
+          %td
+            %b Name
+          %td
+            %b Description
+          %td
+            %b Classrooms
+          %td
+        = render partial: 'courses/course', collection: @courses.latest.limit(5)
+    %hr
+  .col-md-12
+    = link_to classrooms_path do
+      = 'Active classrooms'
+      %span.badge= @classrooms.size
+    %hr
+      %h4 Latest active classrooms
+      %table.table.table-striped
+        %tr
+          %td
+            %b Student
+          %td
+            %b Course
+          %td
+            %b Entry At
+          %td
+        = render partial: 'classrooms/classroom', collection: @classrooms.latest.limit(5)

@@ -1,0 +1,20 @@
+.row
+  .col-md-12
+    %h1 Students
+    = link_to 'Create new student', new_student_path, class: 'badge'
+    %hr
+  .col-md-12
+    %table.table.table-striped
+      %tr
+        %td
+          %b Name
+        %td
+          %b Register Number
+        %td
+          %b Classrooms
+        %td
+          %b Status
+        %td
+      = render partial: 'students/student', collection: @students, locals: { status: true, deletable: true }
+    %hr
+    = paginate @students

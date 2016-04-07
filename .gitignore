@@ -1,0 +1,12 @@
+.DS_Store
+/.bundle
+/.env
+/.vagrant
+/config/application.yml
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/erd.pdf
+/log/*.log
+/public/assets/*
+/public/uploads/*
+/tmp
