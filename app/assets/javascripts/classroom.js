@@ -52,6 +52,9 @@ $(document).ready(function () {
         course: $('#coursesSearch').val()
     };
 
+    if (data.student == "" || data.course == "") {
+        return false;
+    }
     $.post(action, data, function(response){
         if (response.success) {
             $('#classroomTable tr:first').after(response.content);
